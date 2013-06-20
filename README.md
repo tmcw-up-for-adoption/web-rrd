@@ -3,6 +3,16 @@
 A round-robin database for browsers. Backed up by localStorage via store.
 Configurable for fixed-size or interval expiration.
 
+### install
+
+with browserify
+
+    npm install web-rrd
+
+otherwise
+
+    wget https://raw.github.com/tmcw/web-rrd/master/web-rrd.js
+
 ### api
 
 ```js
