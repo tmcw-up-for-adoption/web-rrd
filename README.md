@@ -24,10 +24,10 @@ rrd.list();
 // ['my-key-name']
 
 // add a new data point at now
-callDb(5);
+callDb.add(5);
 
 // add a new data point one minute ago
-callDb(5, (new Date()) - (1000 * 60));
+callDb.add(5, (new Date()) - (1000 * 60));
 
 // get all data points in that db
 callDb.all();
