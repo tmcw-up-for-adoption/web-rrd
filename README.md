@@ -33,7 +33,11 @@ callDb.add(5, (new Date()) - (1000 * 60));
 callDb.all();
 
 // tell the db to remove any values after 100
-callDb.size(100):
+callDb.size(100);
+callDb.all();
+
+// config what key the values are saved in db, default to 'value'
+callDb.key('y');
 callDb.all();
 
 // tell the db to remove any values older than 1 minute

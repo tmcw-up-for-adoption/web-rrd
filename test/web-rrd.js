@@ -57,4 +57,14 @@ describe('web-rrd', function() {
             expect(foo.all().length).to.eql(1);
         });
     });
+
+    describe('key', function() {
+        it('.key()', function() {
+            var bar = rrd('bar');
+            expect(bar.key()).to.eql('value');
+            expect(bar.key('y')).to.eql(bar);
+            expect(bar.size()).to.eql('y');
+        });
+    });
+
 });

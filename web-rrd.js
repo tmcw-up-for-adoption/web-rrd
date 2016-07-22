@@ -22,6 +22,7 @@ function rrd(db_name) {
     var existing = store.get(db_name) || [],
         db = {},
         size = Infinity,
+        key='value',
         interval = Infinity;
 
     ensureListed(db_name);
@@ -29,10 +30,9 @@ function rrd(db_name) {
     db.add = function(value, when) {
         value = value || 0;
         when = +when || +new Date();
-        existing.push({
-            time: when,
-            value: value
-        });
+        var v = {time: when};
+        v[key] = value;
+        existing.push(v);
         if (existing.length > size) existing.pop();
         existing = cullInterval(existing, interval);
         store.set(db_name, existing);
@@ -42,6 +42,12 @@ function rrd(db_name) {
     db.size = function() {
         if (!arguments.length) return size;
         size = arguments[0];
+        return db;
+    };
+
+    db.key = function() {
+        if (!arguments.length) return key;
+        key = arguments[0];
         return db;
     };
 
