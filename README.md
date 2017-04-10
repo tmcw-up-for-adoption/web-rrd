@@ -1,5 +1,7 @@
 ## web-rrd
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tmcw/web-rrd.svg)](https://greenkeeper.io/)
+
 A round-robin database for browsers. Backed up by localStorage via store.
 Configurable for fixed-size or interval expiration.
 
